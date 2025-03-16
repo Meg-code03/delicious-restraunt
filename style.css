@@ -1,0 +1,302 @@
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+.background-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.2), rgba(0, 200, 255, 0.2));
+    animation: moveBackground 8s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    0% { transform: scale(1); filter: blur(20px); }
+    100% { transform: scale(1.2); filter: blur(40px); }
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 50px;
+    backdrop-filter: blur(10px);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #ff9800;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Neon Text */
+.neon-text {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 100, 0, 1);
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 10px rgba(255, 100, 0, 0.8); }
+    100% { text-shadow: 0 0 20px rgba(255, 100, 0, 1); }
+}
+
+/* Buttons */
+.animated-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff9800, #ff3d00);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
+}
+
+/* Hover Animation */
+.animated-btn::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.animated-btn:hover::before {
+    transform: scale(1);
+}
+
+.animated-btn:hover {
+    background: linear-gradient(90deg, #ff3d00, #ff9800);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff9800, 0 0 40px #ff9800;
+}
+
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px #ff9800;
+}
+
+/* Form Styling */
+.reservation, .order-online {
+    text-align: center;
+    padding: 50px 20px;
+}
+.reservation-form, .order-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.reservation-form input, .order-form input, .order-form select {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.reservation-form input:focus, .order-form input:focus, .order-form select:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons */
+.animated-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff9800, #ff3d00);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(255, 100, 0, 0.5);
+}
+
+/* Hover Animation */
+.animated-btn::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.animated-btn:hover::before {
+    transform: scale(1);
+}
+
+.animated-btn:hover {
+    background: linear-gradient(90deg, #ff3d00, #ff9800);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff9800, 0 0 40px #ff9800;
+}
+/* Animated Background and Food Jump Effect */
+#home:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('transparent-background.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(5px);
+    animation: movingBackground 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes movingBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Jumping Food Animation */
+.food-item {
+    position: absolute;
+    animation: foodJump 4s infinite;
+    opacity: 0;
+}
+
+.food-item.pizza {
+    top: 10%;
+    left: 1%;
+    animation-delay: 0s;
+    width: 100%;
+    
+    
+}
+
+.food-item.burger {
+    top: 30%;
+    left: 40%;
+    animation-delay: 10s;
+    
+    
+    
+}
+
+.food-item.sushi {
+    top: 50%;
+    left: 60%;
+    animation-delay: 8s;
+
+}
+
+@keyframes foodJump {
+    0% { transform: translateY(1); opacity: 1; }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(2); }
+}
+.
+
+
+/* Menu Section */
+#menu {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #f5a623;
+    margin-bottom: 30px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-item p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.menu-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #f5a623;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
